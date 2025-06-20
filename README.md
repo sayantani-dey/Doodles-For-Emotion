@@ -22,9 +22,11 @@ To assess model performance, several metrics were applied: accuracy, precision, 
 
 # III. RESULTS AND OBSERVATIONS
 The evaluation of the model involved a combination of traditional metrics and visualization techniques to ensure both statistical accuracy and interpretability. The transformer-based model showed a consistent increase in classification performance across epochs, which was confirmed through training and validation metrics. During the final epoch, the model achieved a perfect validation accuracy of 100%, having started from an initial 95%. The training loss continually decreased, indicating convergence and learning stability. While these figures suggest robust model performance, caution is required due to the limited dataset size, which may have led to overfitting.
-|Model	                | Accuracy	| Precision	| Recall | 
-|YOLOv8	               | 65%	    | Moderate	 |Moderate |
-|Attention Transformer	|100%	    | High    	 |High     |
+
+-|Model	                | Accuracy	| Precision	| Recall | 
+-|YOLOv8	               | 65%	    | Moderate	 |Moderate |
+-|Attention Transformer	|100%	    | High    	 |High     |
+
 The confusion matrix provided a clear picture of the model’s ability to correctly distinguish between the two classes. As shown below, all test images from the "Good" and "Bad" categories were accurately classified without any misclassifications:
  
 
