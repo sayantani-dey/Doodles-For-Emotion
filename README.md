@@ -4,10 +4,12 @@ The project sets out to build a binary classifier that categorizes doodles as ei
 
 # I. METHODOLOGY
 The methodology adopted in this project follows a systematic flow—from data collection and preprocessing to model development and evaluation.
-4.1 DATASET PREPARATION 
+
+i) DATASET PREPARATION 
 Due to the absence of any pre-labeled dataset distinguishing mentally fine and distressed children's doodles, this project required manual curation. Publicly shared doodles were sourced and categorized based on visual indicators such as color tone, stroke intensity, and thematic elements. Drawings expressing happiness, stability, and creativity were classified as “good,” whereas those reflecting darkness, chaos, or fear were labeled as “bad.”
 The images were resized to 224x224 pixels for compatibility with Vision Transformer input dimensions. Standard normalization techniques were applied to standardize the pixel values. Data augmentation strategies such as rotation, flipping, and noise injection were also employed to improve model generalizability and reduce overfitting.
-4.2 MODEL DEVELOPMENT 
+
+ii) MODEL DEVELOPMENT 
 A pre-trained Vision Transformer model (google/vit-base-patch16-224) was fine-tuned on the curated doodle dataset. The ViT model was chosen due to its superior ability to capture contextual relationships in image data. The classifier head was modified to perform binary classification. Cross-entropy loss was used as the objective function, and the AdamW optimizer was selected with a learning rate of 5e-5. The model was trained for five epochs with a batch size of 32.
 The training process showed steady improvements in accuracy with each epoch. Initial validation accuracy started at 95% and stabilized at 100%, indicating strong learning patterns but also signaling possible overfitting due to dataset limitations.
 Training Output:
@@ -20,9 +22,9 @@ To assess model performance, several metrics were applied: accuracy, precision, 
 
 # III. RESULTS AND OBSERVATIONS
 The evaluation of the model involved a combination of traditional metrics and visualization techniques to ensure both statistical accuracy and interpretability. The transformer-based model showed a consistent increase in classification performance across epochs, which was confirmed through training and validation metrics. During the final epoch, the model achieved a perfect validation accuracy of 100%, having started from an initial 95%. The training loss continually decreased, indicating convergence and learning stability. While these figures suggest robust model performance, caution is required due to the limited dataset size, which may have led to overfitting.
-Model	Accuracy	Precision	Recall
-YOLOv8	65%	Moderate	Moderate
-Attention Transformer	100%	High	High
+|Model	                | Accuracy	| Precision	| Recall | 
+|YOLOv8	               | 65%	    | Moderate	 |Moderate |
+|Attention Transformer	|100%	    | High    	 |High     |
 The confusion matrix provided a clear picture of the model’s ability to correctly distinguish between the two classes. As shown below, all test images from the "Good" and "Bad" categories were accurately classified without any misclassifications:
  
 
